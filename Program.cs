@@ -32,8 +32,54 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Player smackTalker = new SmackTalkingPlayer()
+            {
+                Name = "Smakky Talker",
+                Taunt = "imagine going to film school lol"
+            };
+
+            player2.Play(smackTalker);
+
+            Console.WriteLine("-------------------");
+
+            Player oneHigher = new OneHigherPlayer()
+            {
+                Name = "Suspiciously Lucky Guy",
+            };
+
+            oneHigher.Play(smackTalker);
+
+            Console.WriteLine("-------------------");
+
+            Player humanGuy = new HumanPlayer()
+            {
+                Name = "You",
+            };
+
+            humanGuy.Play(player2);
+
+            Console.WriteLine("-------------------");
+
+            Player creativeSmackTalker = new CreativeSmackTalkingPlayer()
+            {
+                Taunt = new List<string>()
+                {
+                    "Taunt #1",
+                    "Taunt #2",
+                    "Taunt #3",
+                    "Taunt #4",
+                    "Taunt #5"
+                },
+                Name = "Smakky Talker's more creative brother, Smaykie Talker",
+            };
+            
+
+            player1.Play(creativeSmackTalker);
+
+            Console.WriteLine("-------------------");
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, smackTalker, oneHigher, creativeSmackTalker
             };
 
             PlayMany(players);
